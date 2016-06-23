@@ -9,7 +9,7 @@ var AppRouter = Backbone.Router.extend({
     list: function(page) {
         var questionList = new QuestionCollection();
         questionList.fetch({success: function(){
-            $("#question-panel").html(new QuestionView({model: questionList}).el);
+            $("#question-panel").html(new QuestionView({model: questionList.at(0)}).el);
         }});
     },
 

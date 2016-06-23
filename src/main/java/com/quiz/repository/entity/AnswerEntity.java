@@ -15,7 +15,7 @@ public class AnswerEntity {
     private Long id;
 	private String answer;
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="contact_id", insertable=false, updatable=false)
+	@JoinColumn(name="question_id", insertable=false, updatable=false)
 	@JsonIgnore
 	private QuestionEntity question;
 	public AnswerEntity() {
