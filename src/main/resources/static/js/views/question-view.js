@@ -11,7 +11,7 @@ window.QuestionView = Backbone.View.extend({
 
     events: {
         "change"        : "change",
-        "click .save"   : "beforeSave",
+        "click #next"   : "saveAnswer",
         "click .delete" : "deleteWine",
         "drop #picture" : "dropHandler"
     },
@@ -37,12 +37,12 @@ window.QuestionView = Backbone.View.extend({
 
 
 
-    saveQuestion: function () {
+    saveAnswer: function () {
         var self = this;
         this.model.save(null, {
             success: function (model) {
                 self.render();
-                app.navigate('wines/' + model.id, false);
+                app.navigate('questions/' + model.id, false);
                 utils.showAlert('Success!', 'Wine saved successfully', 'alert-success');
             },
             error: function () {
